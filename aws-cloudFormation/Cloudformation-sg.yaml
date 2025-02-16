@@ -7,7 +7,7 @@ Resources:
     Type: AWS::EC2::SecurityGroup
     Properties:
       GroupDescription: "Security Group para HAProxy en AZ1"
-      VpcId: !ImportValue equipo3-VPC-ID
+      VpcId: !ImportValue agarciaa-VPC-ID
       SecurityGroupIngress:
         - IpProtocol: tcp
           FromPort: 22
@@ -42,14 +42,14 @@ Resources:
           CidrIp: 0.0.0.0/0
       Tags:
         - Key: Name
-          Value: "equipo3-sg-proxy-az1"
+          Value: "agarciaa-sg-proxy-az1"
 
   # Security Group para Ejabberd en AZ1
   SecurityGroupEjabberd:
     Type: AWS::EC2::SecurityGroup
     Properties:
       GroupDescription: "Security Group para servidores Ejabberd"
-      VpcId: !ImportValue equipo3-VPC-ID
+      VpcId: !ImportValue agarciaa-VPC-ID
       SecurityGroupIngress:
         - IpProtocol: tcp
           FromPort: 22
@@ -76,14 +76,14 @@ Resources:
           CidrIp: 0.0.0.0/0
       Tags:
         - Key: Name
-          Value: "equipo3-sg-ejabberd"
+          Value: "agarciaa-sg-ejabberd"
 
   # Security Group para PostgreSQL en AZ1
   SecurityGroupPostgreSQL:
     Type: AWS::EC2::SecurityGroup
     Properties:
       GroupDescription: "Security Group para servidores PostgreSQL"
-      VpcId: !ImportValue equipo3-VPC-ID
+      VpcId: !ImportValue agarciaa-VPC-ID
       SecurityGroupIngress:
         - IpProtocol: tcp
           FromPort: 5432
@@ -94,14 +94,14 @@ Resources:
           CidrIp: 0.0.0.0/0
       Tags:
         - Key: Name
-          Value: "equipo3-sg-postgresql"
+          Value: "agarciaa-sg-postgresql"
 
   # Security Group para HAProxy en AZ2
   SecurityGroupProxyAZ2:
     Type: AWS::EC2::SecurityGroup
     Properties:
       GroupDescription: "Security Group para Proxy Inverso en AZ2"
-      VpcId: !ImportValue equipo3-VPC-ID
+      VpcId: !ImportValue agarciaa-VPC-ID
       SecurityGroupIngress:
         - IpProtocol: tcp
           FromPort: 80
@@ -120,14 +120,14 @@ Resources:
           CidrIp: 0.0.0.0/0
       Tags:
         - Key: Name
-          Value: "equipo3-sg-proxy-az2"
+          Value: "agarciaa-sg-proxy-az2"
 
   # Security Group para CMS en AZ2
   SecurityGroupCMS:
     Type: AWS::EC2::SecurityGroup
     Properties:
       GroupDescription: "Security Group para Servidor CMS en AZ2"
-      VpcId: !ImportValue equipo3-VPC-ID
+      VpcId: !ImportValue agarciaa-VPC-ID
       SecurityGroupIngress:
         - IpProtocol: tcp
           FromPort: 80
@@ -146,14 +146,14 @@ Resources:
           CidrIp: 0.0.0.0/0
       Tags:
         - Key: Name
-          Value: "equipo3-sg-cms"
+          Value: "agarciaa-sg-cms"
 
   # Security Group para RDS en AZ2
   SecurityGroupRDS:
     Type: AWS::EC2::SecurityGroup
     Properties:
       GroupDescription: "Security Group para Base de Datos MySQL RDS en AZ2"
-      VpcId: !ImportValue equipo3-VPC-ID
+      VpcId: !ImportValue agarciaa-VPC-ID
       SecurityGroupIngress:
         - IpProtocol: tcp
           FromPort: 3306
@@ -164,35 +164,35 @@ Resources:
           CidrIp: 0.0.0.0/0
       Tags:
         - Key: Name
-          Value: "equipo3-sg-rds"
+          Value: "agarciaa-sg-rds"
 
 Outputs:
   SecurityGroupProxyAZ1ID:
     Value: !Ref SecurityGroupProxyAZ1
     Export:
-      Name: "equipo3-SG-Proxy-AZ1-ID"
+      Name: "agarciaa-SG-Proxy-AZ1-ID"
 
   SecurityGroupEjabberdID:
     Value: !Ref SecurityGroupEjabberd
     Export:
-      Name: "equipo3-SG-Ejabberd-ID"
+      Name: "agarciaa-SG-Ejabberd-ID"
 
   SecurityGroupPostgreSQLID:
     Value: !Ref SecurityGroupPostgreSQL
     Export:
-      Name: "equipo3-SG-PostgreSQL-ID"
+      Name: "agarciaa-SG-PostgreSQL-ID"
 
   SecurityGroupProxyAZ2ID:
     Value: !Ref SecurityGroupProxyAZ2
     Export:
-      Name: "equipo3-SG-Proxy-AZ2-ID"
+      Name: "agarciaa-SG-Proxy-AZ2-ID"
 
   SecurityGroupCMSID:
     Value: !Ref SecurityGroupCMS
     Export:
-      Name: "equipo3-SG-CMS-ID"
+      Name: "agarciaa-SG-CMS-ID"
 
   SecurityGroupRDSID:
     Value: !Ref SecurityGroupRDS
     Export:
-      Name: "equipo3-SG-RDS-ID"
+      Name: "agarciaa-SG-RDS-ID"

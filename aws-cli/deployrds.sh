@@ -1,8 +1,8 @@
 #!/bin/bash
 # RDS 
 
-STACK_VPC="equipo3-vpc"
-STACK_SG="equipo3-sg"
+STACK_VPC="agarciaa-reto-vpc"
+STACK_SG="agarciaa-reto-sg"
 
 SG_DB_CMS_ID=$(aws cloudformation describe-stacks --stack-name "$STACK_SG" --query "Stacks[0].Outputs[?ExportName=='equipo3-SG-RDS-ID'].OutputValue" --output text)
 

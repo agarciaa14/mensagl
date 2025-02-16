@@ -4,7 +4,7 @@
 sudo apt update
 sudo apt install -y haproxy
 
-# Configuración básica de HAProxy **IMPORTANTE CAMBIAR IPS**
+# Configuración básica de HAProxy (no va a iniciar porque hay que cambiarla según el servicio)
 sudo bash -c 'cat > /etc/haproxy/haproxy.cfg <<EOF
 defaults
   mode http
@@ -21,7 +21,7 @@ frontend myfrontend
 backend wordpress
   mode http
   balance roundrobin
-  server server1 10.209.133.90:80
+  server server1 127.0.0.1:80
 
 EOF'
 
@@ -30,7 +30,3 @@ sudo systemctl restart haproxy
 
 # Verificar el estado de HAProxy
 sudo systemctl status haproxy
-
-# Configurar el firewall para permitir tráfico HTTP
-sudo ufw allow http
-sudo ufw allow https

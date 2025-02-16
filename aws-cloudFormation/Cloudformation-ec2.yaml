@@ -13,13 +13,13 @@ Resources:
       InstanceType: t2.micro
       ImageId: ami-04b4f1a9cf54c11d0 # Ubuntu Server 24.04
       KeyName: !Ref KeyName
-      SubnetId: !ImportValue equipo3-SubnetPublic1-ID
+      SubnetId: !ImportValue agarciaa-SubnetPublic1-ID
       SecurityGroupIds:
-        - !ImportValue equipo3-SG-Proxy-AZ1-ID
-      PrivateIpAddress: 10.0.1.50
+        - !ImportValue agarciaa-SG-Proxy-AZ1-ID
+      PrivateIpAddress: 10.209.1.50
       Tags:
         - Key: Name
-          Value: "equipo3-az1-proxy"
+          Value: "agarciaa-az1-proxy"
       UserData:
         Fn::Base64: !Sub |
           #!/bin/bash
@@ -35,13 +35,13 @@ Resources:
       InstanceType: t2.micro
       ImageId: ami-04b4f1a9cf54c11d0 # Ubuntu Server 24.04
       KeyName: !Ref KeyName
-      SubnetId: !ImportValue equipo3-SubnetPublic2-ID
+      SubnetId: !ImportValue agarciaa-SubnetPublic2-ID
       SecurityGroupIds:
-        - !ImportValue equipo3-SG-Proxy-AZ2-ID
-      PrivateIpAddress: 10.0.2.50
+        - !ImportValue agarciaa-SG-Proxy-AZ2-ID
+      PrivateIpAddress: 10.209.2.50
       Tags:
         - Key: Name
-          Value: "equipo3-az2-proxy"
+          Value: "agarciaa-az2-proxy"
       UserData:
         Fn::Base64: !Sub |
           #!/bin/bash
@@ -57,13 +57,13 @@ Resources:
       InstanceType: t2.micro
       ImageId: ami-04b4f1a9cf54c11d0 # ubuntu Server 24.04
       KeyName: !Ref KeyName
-      SubnetId: !ImportValue equipo3-SubnetPrivate1-ID
+      SubnetId: !ImportValue agarciaa-SubnetPrivate1-ID
       SecurityGroupIds:
-        - !ImportValue equipo3-SG-Ejabberd-ID
-      PrivateIpAddress: 10.0.3.10
+        - !ImportValue agarciaa-SG-Ejabberd-ID
+      PrivateIpAddress: 10.209.3.10
       Tags:
         - Key: Name
-          Value: "equipo3-ejabberd-1"
+          Value: "agarciaa-ejabberd-1"
       UserData:
         Fn::Base64: !Sub |
           #!/bin/bash
@@ -79,13 +79,13 @@ Resources:
       InstanceType: t2.micro
       ImageId: ami-04b4f1a9cf54c11d0 # Ubuntu Server 24.04
       KeyName: !Ref KeyName
-      SubnetId: !ImportValue equipo3-SubnetPrivate1-ID
+      SubnetId: !ImportValue agarciaa-SubnetPrivate1-ID
       SecurityGroupIds:
-        - !ImportValue equipo3-SG-Ejabberd-ID
-      PrivateIpAddress: 10.0.3.11
+        - !ImportValue agarciaa-SG-Ejabberd-ID
+      PrivateIpAddress: 10.209.3.11
       Tags:
         - Key: Name
-          Value: "equipo3-ejabberd-2"
+          Value: "agarciaa-ejabberd-2"
       UserData:
         Fn::Base64: !Sub |
           #!/bin/bash
@@ -101,13 +101,13 @@ Resources:
       InstanceType: t2.micro
       ImageId: ami-04b4f1a9cf54c11d0 # Ubuntu Server 24.04
       KeyName: !Ref KeyName
-      SubnetId: !ImportValue equipo3-SubnetPrivate1-ID
+      SubnetId: !ImportValue agarciaa-SubnetPrivate1-ID
       SecurityGroupIds:
-        - !ImportValue equipo3-SG-PostgreSQL-ID
-      PrivateIpAddress: 10.0.3.100
+        - !ImportValue agarciaa-SG-PostgreSQL-ID
+      PrivateIpAddress: 10.209.3.100
       Tags:
         - Key: Name
-          Value: "equipo3-az1-postgresql-1"
+          Value: "agarciaa-az1-postgresql-1"
       UserData:
         Fn::Base64: !Sub |
           #!/bin/bash
@@ -123,13 +123,13 @@ Resources:
       InstanceType: t2.micro
       ImageId: ami-04b4f1a9cf54c11d0 # Ubuntu Server 24.04
       KeyName: !Ref KeyName
-      SubnetId: !ImportValue equipo3-SubnetPrivate1-ID
+      SubnetId: !ImportValue agarciaa-SubnetPrivate1-ID
       SecurityGroupIds:
-        - !ImportValue equipo3-SG-PostgreSQL-ID
-      PrivateIpAddress: 10.0.3.101
+        - !ImportValue agarciaa-SG-PostgreSQL-ID
+      PrivateIpAddress: 10.209.3.101
       Tags:
         - Key: Name
-          Value: "equipo3-az1-postgresql-2"
+          Value: "agarciaa-az1-postgresql-2"
       UserData:
         Fn::Base64: !Sub |
           #!/bin/bash
@@ -145,14 +145,14 @@ Resources:
       InstanceType: t2.micro
       ImageId: ami-04b4f1a9cf54c11d0 # Ubuntu Server 24.04
       KeyName: !Ref KeyName
-      SubnetId: !ImportValue equipo3-SubnetPrivate2-ID
+      SubnetId: !ImportValue agarciaa-SubnetPrivate2-ID
       SecurityGroupIds:
-        - !ImportValue equipo3-SG-CMS-ID
-        - !ImportValue equipo3-SG-RDS-ID  # Asegura que CMS pueda hablar con RDS
-      PrivateIpAddress: 10.0.4.10
+        - !ImportValue agarciaa-SG-CMS-ID
+        - !ImportValue agarciaa-SG-RDS-ID  # Asegura que CMS pueda hablar con RDS
+      PrivateIpAddress: 10.209.4.10
       Tags:
         - Key: Name
-          Value: "equipo3-az2-cms1"
+          Value: "agarciaa-az2-cms1"
       UserData:
         Fn::Base64: !Sub |
           #!/bin/bash
@@ -168,14 +168,14 @@ Resources:
       InstanceType: t2.micro
       ImageId: ami-04b4f1a9cf54c11d0 # Ubuntu Server 24.04
       KeyName: !Ref KeyName
-      SubnetId: !ImportValue equipo3-SubnetPrivate2-ID
+      SubnetId: !ImportValue agarciaa-SubnetPrivate2-ID
       SecurityGroupIds:
-        - !ImportValue equipo3-SG-CMS-ID
-        - !ImportValue equipo3-SG-RDS-ID  # Asegura que CMS pueda hablar con RDS
-      PrivateIpAddress: 10.0.4.11
+        - !ImportValue agarciaa-SG-CMS-ID
+        - !ImportValue agarciaa-SG-RDS-ID  # Asegura que CMS pueda hablar con RDS
+      PrivateIpAddress: 10.209.4.11
       Tags:
         - Key: Name
-          Value: "equipo3-az2-cms2"
+          Value: "agarciaa-az2-cms2"
       UserData:
         Fn::Base64: !Sub |
           #!/bin/bash
@@ -191,47 +191,47 @@ Outputs:
     Description: "ID de la instancia Proxy en AZ1"
     Value: !Ref EC2ProxyAZ1
     Export:
-      Name: "equipo3-EC2-Proxy-AZ1-ID"
+      Name: "agarciaa-EC2-Proxy-AZ1-ID"
 
   EC2ProxyAZ2Id:
     Description: "ID de la instancia Proxy en AZ2"
     Value: !Ref EC2ProxyAZ2
     Export:
-      Name: "equipo3-EC2-Proxy-AZ2-ID"
+      Name: "agarciaa-EC2-Proxy-AZ2-ID"
 
   EC2Ejabberd1Id:
     Description: "ID de la primera instancia Ejabberd"
     Value: !Ref EC2Ejabberd1
     Export:
-      Name: "equipo3-EC2-Ejabberd-1-ID"
+      Name: "agarciaa-EC2-Ejabberd-1-ID"
 
   EC2Ejabberd2Id:
     Description: "ID de la segunda instancia Ejabberd"
     Value: !Ref EC2Ejabberd2
     Export:
-      Name: "equipo3-EC2-Ejabberd-2-ID"
+      Name: "agarciaa-EC2-Ejabberd-2-ID"
 
   EC2PostgreSQL1Id:
     Description: "ID de la primera instancia PostgreSQL"
     Value: !Ref EC2PostgreSQL1
     Export:
-      Name: "equipo3-EC2-PostgreSQL-1-ID"
+      Name: "agarciaa-EC2-PostgreSQL-1-ID"
 
   EC2PostgreSQL2Id:
     Description: "ID de la segunda instancia PostgreSQL"
     Value: !Ref EC2PostgreSQL2
     Export:
-      Name: "equipo3-EC2-PostgreSQL-2-ID"
+      Name: "agarciaa-EC2-PostgreSQL-2-ID"
 
   EC2CMS1Id:
     Description: "ID de la primera instancia CMS"
     Value: !Ref EC2CMS1
     Export:
-      Name: "equipo3-EC2-CMS-1-ID"
+      Name: "agarciaa-EC2-CMS-1-ID"
 
   EC2CMS2Id:
     Description: "ID de la segunda instancia CMS"
     Value: !Ref EC2CMS2
     Export:
-      Name: "equipo3-EC2-CMS-2-ID"
+      Name: "agarciaa-EC2-CMS-2-ID"
 

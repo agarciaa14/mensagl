@@ -5,19 +5,19 @@ Resources:
   VPC:
     Type: AWS::EC2::VPC
     Properties:
-      CidrBlock: 10.0.0.0/16
+      CidrBlock: 10.209.0.0/16
       EnableDnsSupport: true
       EnableDnsHostnames: true
       Tags:
         - Key: Name
-          Value: "equipo3-vpc"
+          Value: "agarciaa-vpc"
 
   InternetGateway:
     Type: AWS::EC2::InternetGateway
     Properties:
       Tags:
         - Key: Name
-          Value: "equipo3-igw"
+          Value: "agarciaa-igw"
 
   VPCGatewayAttachment:
     Type: AWS::EC2::VPCGatewayAttachment
@@ -30,43 +30,43 @@ Resources:
     Type: AWS::EC2::Subnet
     Properties:
       VpcId: !Ref VPC
-      CidrBlock: 10.0.1.0/24
+      CidrBlock: 10.209.1.0/24
       MapPublicIpOnLaunch: true
       AvailabilityZone: !Select [0, !GetAZs ""]
       Tags:
         - Key: Name
-          Value: "equipo3-public-1"
+          Value: "agarciaa-public-1"
 
   SubnetPublic2:
     Type: AWS::EC2::Subnet
     Properties:
       VpcId: !Ref VPC
-      CidrBlock: 10.0.2.0/24
+      CidrBlock: 10.209.2.0/24
       MapPublicIpOnLaunch: true
       AvailabilityZone: !Select [1, !GetAZs ""]
       Tags:
         - Key: Name
-          Value: "equipo3-public-2"
+          Value: "agarciaa-public-2"
 
   SubnetPrivate1:
     Type: AWS::EC2::Subnet
     Properties:
       VpcId: !Ref VPC
-      CidrBlock: 10.0.3.0/24
+      CidrBlock: 10.209.3.0/24
       AvailabilityZone: !Select [0, !GetAZs ""]
       Tags:
         - Key: Name
-          Value: "equipo3-private-1"
+          Value: "agarciaa-private-1"
 
   SubnetPrivate2:
     Type: AWS::EC2::Subnet
     Properties:
       VpcId: !Ref VPC
-      CidrBlock: 10.0.4.0/24
+      CidrBlock: 10.209.4.0/24
       AvailabilityZone: !Select [1, !GetAZs ""]
       Tags:
         - Key: Name
-          Value: "equipo3-private-2"
+          Value: "agarciaa-private-2"
 
   NATGateway:
     Type: AWS::EC2::NatGateway
@@ -75,7 +75,7 @@ Resources:
       SubnetId: !Ref SubnetPublic1
       Tags:
         - Key: Name
-          Value: "equipo3-natgw"
+          Value: "agarciaa-natgw"
 
   ElasticIP:
     Type: AWS::EC2::EIP
@@ -88,7 +88,7 @@ Resources:
       VpcId: !Ref VPC
       Tags:
         - Key: Name
-          Value: "equipo3-public-rt"
+          Value: "agarciaa-public-rt"
 
   RouteTablePublicAssociation1:
     Type: AWS::EC2::SubnetRouteTableAssociation
@@ -115,7 +115,7 @@ Resources:
       VpcId: !Ref VPC
       Tags:
         - Key: Name
-          Value: "equipo3-private-rt"
+          Value: "agarciaa-private-rt"
 
   RouteTablePrivateAssociation1:
     Type: AWS::EC2::SubnetRouteTableAssociation
@@ -142,34 +142,34 @@ Outputs:
     Description: "VPC ID"
     Value: !Ref VPC
     Export:
-      Name: "equipo3-VPC-ID"
+      Name: "agarciaa-VPC-ID"
 
   SubnetPublic1Id:
     Description: "ID de la subred pública 1"
     Value: !Ref SubnetPublic1
     Export:
-      Name: "equipo3-SubnetPublic1-ID"
+      Name: "agarciaa-SubnetPublic1-ID"
 
   SubnetPublic2Id:
     Description: "ID de la subred pública 2"
     Value: !Ref SubnetPublic2
     Export:
-      Name: "equipo3-SubnetPublic2-ID"
+      Name: "agarciaa-SubnetPublic2-ID"
 
   SubnetPrivate1Id:
     Description: "ID de la subred privada 1"
     Value: !Ref SubnetPrivate1
     Export:
-      Name: "equipo3-SubnetPrivate1-ID"
+      Name: "agarciaa-SubnetPrivate1-ID"
 
   SubnetPrivate2Id:
     Description: "ID de la subred privada 2"
     Value: !Ref SubnetPrivate2
     Export:
-      Name: "equipo3-SubnetPrivate2-ID"
+      Name: "agarciaa-SubnetPrivate2-ID"
 
   NatGatewayId:
     Description: "ID del NAT Gateway"
     Value: !Ref NATGateway
     Export:
-      Name: "equipo3-NATGateway-ID"
+      Name: "agarciaa-NATGateway-ID"

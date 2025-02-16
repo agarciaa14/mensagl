@@ -22,5 +22,3 @@ EOF
 # Configurar MySQL para aceptar conexiones remotas
 sudo sed -i "s/bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysql/mysql.conf.d/mysqld.cnf
 sudo systemctl restart mysql
-
-echo "Instalación de MySQL completada. Asegúrate de configurar tu firewall para permitir conexiones a MySQL."

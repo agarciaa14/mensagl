@@ -2,10 +2,10 @@
 
 set -e  # Detener la ejecución en caso de error
 
-STACK_VPC="equipo3-vpc"
-STACK_SG="equipo3-sg"
-STACK_INSTANCES="equipo3-instances"
-KEY_NAME="mensagl"
+STACK_VPC="agarciaa-reto-vpc"
+STACK_SG="egarciaa-reto-sg"
+STACK_INSTANCES="agarciaa-reto-instances"
+KEY_NAME="agarciaa-mensagl"
 KEY_FILE="${KEY_NAME}.pem"
 
 # Directorios de los archivos YAML

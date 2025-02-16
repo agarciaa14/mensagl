@@ -4,8 +4,8 @@
 # Script combinado para la creación de VPC, subredes, gateways y Security Groups con NAT Gateway
 
 # VARIABLES
-VPC_NAME="reto25-equipo3-pablomm-vpc"
-CIDR_BLOCK="10.0.0.0/16"
+VPC_NAME="agarciaa-reto-vpc"
+CIDR_BLOCK="10.209.0.0/16"
 REGION="us-east-1"
 
 # Crear una VPC
@@ -18,22 +18,22 @@ echo "VPC creada: $VPC_ID"
 aws ec2 modify-vpc-attribute --vpc-id $VPC_ID --enable-dns-hostnames
 
 # Crear subredes
-SUBNET_PUBLIC_1=$(aws ec2 create-subnet --vpc-id $VPC_ID --cidr-block "10.0.1.0/24" --availability-zone "$REGION"a \
+SUBNET_PUBLIC_1=$(aws ec2 create-subnet --vpc-id $VPC_ID --cidr-block "10.209.1.0/24" --availability-zone "$REGION"a \
   --tag-specifications 'ResourceType=subnet,Tags=[{Key=Name,Value=Public1}]' \
   --query 'Subnet.SubnetId' --output text)
 echo "Subred pública 1 creada: $SUBNET_PUBLIC_1"
 
-SUBNET_PUBLIC_2=$(aws ec2 create-subnet --vpc-id $VPC_ID --cidr-block "10.0.2.0/24" --availability-zone "$REGION"b \
+SUBNET_PUBLIC_2=$(aws ec2 create-subnet --vpc-id $VPC_ID --cidr-block "10.209.2.0/24" --availability-zone "$REGION"b \
   --tag-specifications 'ResourceType=subnet,Tags=[{Key=Name,Value=Public2}]' \
   --query 'Subnet.SubnetId' --output text)
 echo "Subred pública 2 creada: $SUBNET_PUBLIC_2"
 
-SUBNET_PRIVATE_1=$(aws ec2 create-subnet --vpc-id $VPC_ID --cidr-block "10.0.3.0/24" --availability-zone "$REGION"a \
+SUBNET_PRIVATE_1=$(aws ec2 create-subnet --vpc-id $VPC_ID --cidr-block "10.209.3.0/24" --availability-zone "$REGION"a \
   --tag-specifications 'ResourceType=subnet,Tags=[{Key=Name,Value=Private1}]' \
   --query 'Subnet.SubnetId' --output text)
 echo "Subred privada 1 creada: $SUBNET_PRIVATE_1"
 
-SUBNET_PRIVATE_2=$(aws ec2 create-subnet --vpc-id $VPC_ID --cidr-block "10.0.4.0/24" --availability-zone "$REGION"b \
+SUBNET_PRIVATE_2=$(aws ec2 create-subnet --vpc-id $VPC_ID --cidr-block "10.209.4.0/24" --availability-zone "$REGION"b \
   --tag-specifications 'ResourceType=subnet,Tags=[{Key=Name,Value=Private2}]' \
   --query 'Subnet.SubnetId' --output text)
 echo "Subred privada 2 creada: $SUBNET_PRIVATE_2"
